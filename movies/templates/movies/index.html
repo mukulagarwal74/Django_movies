@@ -1,0 +1,14 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'movies/style.css' %}">
+
+<h1 style="text-align:center">Movie Listing</h1>
+{% if movies_name %}
+    <ul>
+    {% for movies in movies_name %}
+        <li><a href="/movies/{{movies}}">{{movies}}</li>
+    {% endfor %}
+    </ul>
+
+{% else %}
+    <p>No movies are available.</p>
+{% endif %}
